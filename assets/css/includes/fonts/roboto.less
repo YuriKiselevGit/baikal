@@ -1,0 +1,40 @@
+/*------------------------------------------------------------------
+[Fonts - Helvetica]
+*/
+
+.Helvetica-font(@type, @weight, @style) {
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.eot');
+        src: local('Helvetica @{type}'),
+             local('Helvetica-@{type}'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.eot?#iefix') format('embedded-opentype'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.woff') format('woff'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.ttf') format('truetype');
+			 
+        font-weight: @weight;
+        font-style: @style;
+    }
+
+    @font-face {
+        font-family: 'Helvetica-@{type}';
+        src: url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.eot');
+        src: local('Helvetica @{type}'),
+             local('Helvetica-@{type}'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.eot?#iefix') format('embedded-opentype'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.woff') format('woff'),
+			url('@{Helvetica-font-path}/HelveticaNeueCyr-@{type}.ttf') format('truetype');
+    }
+}
+
+.Helvetica-font-pair(@type, @weight) {
+    .Helvetica-font('@{type}', @weight, normal);
+    .Helvetica-font('@{type}Italic', @weight, italic);
+}
+
+.Helvetica-font-pair('Thin', 100);
+.Helvetica-font-pair('Light', 300);
+.Helvetica-font-pair('Regular', 400);
+.Helvetica-font-pair('Medium', 500);
+.Helvetica-font-pair('Bold', 700);
+.Helvetica-font-pair('Black', 900);
